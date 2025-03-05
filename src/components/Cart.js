@@ -6,7 +6,7 @@ const Cart = ({ cart }) => {
     <div className="p-4 border rounded-lg shadow-md mt-4">
       <h2 className="text-xl font-bold">Cart</h2>
       {cart.length === 0 ? (
-        <p className="text-gray-500">Cart is empty</p>
+        <p className="text-gray-500">Cart is empty.</p>
       ) : (
         <ul>
           {cart.map((item, index) => (
