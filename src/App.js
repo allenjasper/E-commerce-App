@@ -9,6 +9,22 @@ class App extends Component {
     cart: []
   };
 
+  componentDidMount() {
+    // Simulating fetching product data
+    const products = [
+      { id: 1, name: 'Laptop', price: 1000, image: 'https://via.placeholder.com/150' },
+      { id: 2, name: 'Phone', price: 500, image: 'https://via.placeholder.com/150' },
+      { id: 3, name: 'Headphones', price: 200, image: 'https://via.placeholder.com/150' }
+    ];
+    this.setState({ products });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.cart !== this.state.cart) {
+      console.log('Cart updated:', this.state.cart);
+    }
+  }
+
   addToCart = (product) => {
     this.setState((prevState) => {
       const cartItem = prevState.cart.find((item) => item.id === product.id);
